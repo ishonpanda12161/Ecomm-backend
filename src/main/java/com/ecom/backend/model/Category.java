@@ -1,14 +1,20 @@
 package com.ecom.backend.model;
 
+import jakarta.persistence.*;
+
+@Entity(name = "categoryTable")
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long categoryId;
     private String categoryName;
 
-    
-    public Category(Long categoryId, String categoryName) {
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
+
+
+
+    public Category() {
+
     }
 
     public Long getCategoryId() {

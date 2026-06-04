@@ -25,6 +25,15 @@ public class CategoryController {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }
 
+    @PostMapping("/admin/categoryBulk")
+    public ResponseEntity<List<Category>> createBulk(
+            @RequestBody List<Category> categories
+    )
+    {
+            categoryService.createBulkCategories(categories);
+            return ResponseEntity.ok().body(categories);
+    }
+
     @PostMapping("/admin/category")
     public ResponseEntity<Category> createCategory(
             @RequestBody Category category
