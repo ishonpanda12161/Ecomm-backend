@@ -1,11 +1,11 @@
 package com.ecom.backend.service;
 
+import com.ecom.backend.exceptions.GenericAPIException;
+import com.ecom.backend.exceptions.ResourceAlreadyExistsException;
 import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.model.Category;
 import com.ecom.backend.repository.CategoryRepository;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @Service
@@ -19,7 +19,12 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public List<Category> getAllCategories() {
-        return categoryRepository.findAll();
+        List<Category> categories = categoryRepository.findAll();
+        if(categories.isEmpty())
+        {
+            throw new GenericAPIException("No categories present.");
+        }
+        return categories;
     }
 
     @Override
@@ -29,6 +34,12 @@ public class CategoryServiceImpl implements CategoryService{
 
     @Override
     public void createCategory(Category category) {
+        Category temp = categoryRepository.findByCategoryName(category.getCategoryName());
+
+        if(temp!=null)
+        {
+            throw new ResourceAlreadyExistsException("Category",category.getCategoryId());
+        }
         categoryRepository.save(category);
     }
 
