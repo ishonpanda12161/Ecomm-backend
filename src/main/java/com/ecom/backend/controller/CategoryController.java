@@ -2,10 +2,10 @@ package com.ecom.backend.controller;
 
 import com.ecom.backend.model.Category;
 import com.ecom.backend.service.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class CategoryController {
 
     @PostMapping("/admin/category")
     public ResponseEntity<Category> createCategory(
-            @RequestBody Category category
+           @Valid @RequestBody Category category
     )
     {
         categoryService.createCategory(category);
@@ -48,15 +48,8 @@ public class CategoryController {
             @RequestBody Category category
     )
     {
-        try{
-            String res = categoryService.updateCategory(category);
-            return ResponseEntity.ok(res);
-        }
-        catch (ResponseStatusException e)
-        {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        }
-
+        String res = categoryService.updateCategory(category);
+        return ResponseEntity.ok(res);
     }
 
     @DeleteMapping("/admin/category/{categoryId}")
@@ -64,14 +57,8 @@ public class CategoryController {
             @PathVariable Long categoryId
     )
     {
-        try{
-            String status = categoryService.deleteCategory(categoryId);
-            return ResponseEntity.ok(status);
-        }
-        catch (ResponseStatusException e)
-        {
-            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
-        }
+        String status = categoryService.deleteCategory(categoryId);
+        return ResponseEntity.ok(status);
     }
 
 

@@ -1,5 +1,6 @@
 package com.ecom.backend.service;
 
+import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.model.Category;
 import com.ecom.backend.repository.CategoryRepository;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public String deleteCategory(Long categoryId) {
         Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Resource Not Found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Category","ID",categoryId));
 
         categoryRepository.delete(category);
         return category.getCategoryName() + "  deleted";
@@ -43,7 +44,7 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public String updateCategory(Category category) {
         Category cat = categoryRepository.findById(category.getCategoryId())
-                .orElseThrow(()-> new ResponseStatusException(HttpStatus.NOT_FOUND,"Category with category id : "+category.getCategoryId()+" not found"));
+                .orElseThrow(()-> new ResourceNotFoundException("Category","ID", category.getCategoryId()));
         cat.setCategoryName(category.getCategoryName());
         categoryRepository.save(cat);
         return "Updated!";
