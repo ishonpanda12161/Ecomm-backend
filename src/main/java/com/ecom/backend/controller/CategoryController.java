@@ -1,6 +1,7 @@
 package com.ecom.backend.controller;
 
 import com.ecom.backend.model.Category;
+import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.service.CategoryService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class CategoryController {
     }
 
     @GetMapping("/public/category")
-    public ResponseEntity<List<Category>> getAllCategories()
+    public ResponseEntity<CategoryResponseDTO> getAllCategories()
     {
         return ResponseEntity.ok(categoryService.getAllCategories());
     }

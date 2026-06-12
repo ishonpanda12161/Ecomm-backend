@@ -21,7 +21,7 @@ public class Category {
     private Long categoryId;
 
     @NotBlank
-    @Size(min = 3,max = 20,message = "Minimum 3 length and cannot exceed 20.")
+    @Size(min = 3,max = 25,message = "Minimum 3 length and cannot exceed 20.")
     private String categoryName;
 
 }

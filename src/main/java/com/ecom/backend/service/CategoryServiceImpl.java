@@ -3,7 +3,9 @@ package com.ecom.backend.service;
 import com.ecom.backend.exceptions.GenericAPIException;
 import com.ecom.backend.exceptions.ResourceAlreadyExistsException;
 import com.ecom.backend.exceptions.ResourceNotFoundException;
+import com.ecom.backend.mapper.CategoryMapper;
 import com.ecom.backend.model.Category;
+import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -12,19 +14,21 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository categoryRepository;
+    private final CategoryMapper categoryMapper;
 
-    public CategoryServiceImpl(CategoryRepository categoryRepository) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
         this.categoryRepository = categoryRepository;
+        this.categoryMapper = categoryMapper;
     }
 
     @Override
-    public List<Category> getAllCategories() {
+    public CategoryResponseDTO getAllCategories() {
         List<Category> categories = categoryRepository.findAll();
         if(categories.isEmpty())
         {
             throw new GenericAPIException("No categories present.");
         }
-        return categories;
+        return new CategoryResponseDTO(categoryMapper.toDTOList(categories));
     }
 
     @Override
