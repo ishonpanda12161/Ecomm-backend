@@ -5,8 +5,13 @@ import com.ecom.backend.exceptions.ResourceAlreadyExistsException;
 import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.mapper.CategoryMapper;
 import com.ecom.backend.model.Category;
+import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.repository.CategoryRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -22,24 +27,36 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public CategoryResponseDTO getAllCategories() {
-        List<Category> categories = categoryRepository.findAll();
+    public CategoryResponseDTO getAllCategories(Integer pageNum, Integer pageSize,String sortBy,String sortDir) {
+
+        Pageable page = PageRequest.of(pageNum,pageSize,Sort.by(sortDir.equalsIgnoreCase("asc") ? Sort.Order.asc(sortBy) : Sort.Order.desc(sortBy)));
+        Page<Category> categories = categoryRepository.findAll(page);
+
+        List<CategoryDTO> list = categoryMapper.toDTOList(categories.getContent());
+
+        return new CategoryResponseDTO(list,categories.getNumber(),categories.getSize(),categories.getTotalElements(),categories.getTotalPages(),categories.isLast());
+
+    }
+
+    @Override
+    public void createBulkCategories(List<CategoryDTO> categories)
+    {
         if(categories.isEmpty())
         {
-            throw new GenericAPIException("No categories present.");
+            throw new GenericAPIException("Nothing to Create. List Empty");
         }
-        return new CategoryResponseDTO(categoryMapper.toDTOList(categories));
+        List<Category> list = categories.stream().
+                map(c -> categoryMapper.toModel(c))
+                        .toList();
+
+        categoryRepository.saveAll(list);
     }
 
     @Override
-    public void createBulkCategories(List<Category> categories) {
-        categoryRepository.saveAll(categories);
-    }
+    public void createCategory(CategoryDTO categoryDTO) {
 
-    @Override
-    public void createCategory(Category category) {
+        Category category = categoryMapper.toModel(categoryDTO);
         Category temp = categoryRepository.findByCategoryName(category.getCategoryName());
-
         if(temp!=null)
         {
             throw new ResourceAlreadyExistsException("Category",category.getCategoryId());
@@ -57,10 +74,11 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public String updateCategory(Category category) {
-        Category cat = categoryRepository.findById(category.getCategoryId())
-                .orElseThrow(()-> new ResourceNotFoundException("Category","ID", category.getCategoryId()));
-        cat.setCategoryName(category.getCategoryName());
+    public String updateCategory(CategoryDTO categoryDTO) {
+
+        Category cat = categoryRepository.findById(categoryDTO.getCategoryId())
+                .orElseThrow(()-> new ResourceNotFoundException("Category","ID", categoryDTO.getCategoryId()));
+        cat.setCategoryName(categoryDTO.getCategoryName());
         categoryRepository.save(cat);
         return "Updated!";
     }

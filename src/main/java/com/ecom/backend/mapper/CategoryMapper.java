@@ -12,4 +12,11 @@ public interface CategoryMapper {
     CategoryDTO toDTO(Category category);
     Category toModel(CategoryDTO categoryDTO);
     List<CategoryDTO> toDTOList(List<Category> categories);
+//    CategoryResponseDTO toResponseDTO(
+//            List<CategoryDTO> content,
+//            Integer pageNum,
+//            Integer pageSize,
+//            Long totalElements,
+//            Integer totalPages,
+//            boolean lastPage );
 }

@@ -1,6 +1,7 @@
 package com.ecom.backend.controller;
 
-import com.ecom.backend.model.Category;
+
+import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.service.CategoryService;
 import jakarta.validation.Valid;
@@ -21,35 +22,41 @@ public class CategoryController {
     }
 
     @GetMapping("/public/category")
-    public ResponseEntity<CategoryResponseDTO> getAllCategories()
+    public ResponseEntity<CategoryResponseDTO> getAllCategories(
+            @RequestParam(name = "pageNum",defaultValue = "0") Integer pageNum,
+            @RequestParam(name = "pageSize",defaultValue = "10") Integer pageSize,
+            @RequestParam(name = "sortBy",defaultValue = "categoryId") String sortBy,
+            @RequestParam(name = "sortDir",defaultValue = "asc") String sortDir
+
+    )
     {
-        return ResponseEntity.ok(categoryService.getAllCategories());
+        return ResponseEntity.ok(categoryService.getAllCategories(pageNum,pageSize,sortBy,sortDir));
     }
 
     @PostMapping("/admin/categoryBulk")
-    public ResponseEntity<List<Category>> createBulk(
-            @RequestBody List<Category> categories
+    public ResponseEntity<String> createBulk(
+            @RequestBody List<CategoryDTO> categories
     )
     {
             categoryService.createBulkCategories(categories);
-            return ResponseEntity.ok().body(categories);
+            return ResponseEntity.ok().body("Created");
     }
 
     @PostMapping("/admin/category")
-    public ResponseEntity<Category> createCategory(
-           @Valid @RequestBody Category category
+    public ResponseEntity<CategoryDTO> createCategory(
+           @Valid @RequestBody CategoryDTO categoryDTO
     )
     {
-        categoryService.createCategory(category);
-        return ResponseEntity.status(HttpStatus.CREATED).body(category);
+        categoryService.createCategory(categoryDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryDTO);
     }
 
     @PutMapping("/admin/category")
     public ResponseEntity<String> updateCategory(
-            @RequestBody Category category
+            @RequestBody CategoryDTO categoryDTO
     )
     {
-        String res = categoryService.updateCategory(category);
+        String res = categoryService.updateCategory(categoryDTO);
         return ResponseEntity.ok(res);
     }
 
