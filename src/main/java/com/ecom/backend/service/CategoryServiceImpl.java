@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService{
             throw new GenericAPIException("Nothing to Create. List Empty");
         }
         List<Category> list = categories.stream().
-                map(c -> categoryMapper.toModel(c))
+                map(categoryMapper::toModel)
                         .toList();
 
         categoryRepository.saveAll(list);
