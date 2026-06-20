@@ -1,6 +1,9 @@
 package com.ecom.backend.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,19 +12,33 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Table(
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        columnNames = {"product_name","category_id"}
+                )
+        }
+)
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    @Size(min = 3,message = "Must contain at least 3 characters.")
     private String productName;
+    @NotBlank
+    @Size(min = 5,message = "Must contain at least 5 characters.")
     private String description;
     private String image;
+    @NotNull
     private Integer quantity;
-    private double price;
-    private double discount;
-    private double specialPrice;
+    @NotNull
+    private Double price;
+    @NotNull
+    private Double discount;
+    private Double specialPrice;
 
     @ManyToOne
     @JoinColumn(name = "category_id")

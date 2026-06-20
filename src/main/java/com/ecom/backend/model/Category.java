@@ -1,14 +1,13 @@
 package com.ecom.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity(name = "categoryTable")
 @Getter
@@ -24,4 +23,9 @@ public class Category {
     @Size(min = 3,max = 25,message = "Minimum 3 length and cannot exceed 20.")
     private String categoryName;
 
+    @OneToMany(
+            mappedBy = "category",
+            cascade = CascadeType.ALL
+    )
+    private List<Product> products;
 }

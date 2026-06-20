@@ -1,6 +1,7 @@
 package com.ecom.backend.controller;
 
 
+import com.ecom.backend.config.AppConstants;
 import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.service.CategoryService;
@@ -23,10 +24,10 @@ public class CategoryController {
 
     @GetMapping("/public/category")
     public ResponseEntity<CategoryResponseDTO> getAllCategories(
-            @RequestParam(name = "pageNum",defaultValue = "0") Integer pageNum,
-            @RequestParam(name = "pageSize",defaultValue = "10") Integer pageSize,
-            @RequestParam(name = "sortBy",defaultValue = "categoryId") String sortBy,
-            @RequestParam(name = "sortDir",defaultValue = "asc") String sortDir
+            @RequestParam(name = "pageNum",defaultValue = AppConstants.PAGE_NUMBER) Integer pageNum,
+            @RequestParam(name = "pageSize",defaultValue = AppConstants.PAGE_SIZE) Integer pageSize,
+            @RequestParam(name = "sortBy",defaultValue = AppConstants.SORT_CATEGORIES_BY) String sortBy,
+            @RequestParam(name = "sortDir",defaultValue = AppConstants.SORT_DIR) String sortDir
 
     )
     {
