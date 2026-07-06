@@ -47,7 +47,7 @@ public class AuthServiceImpl implements AuthService{
 
         signupDTO.setPassword(passwordEncoder.encode(signupDTO.getPassword()));
 
-        if(signupDTO.getRoles()==null)
+        if(signupDTO.getRoles()==null || signupDTO.getRoles().isEmpty())
         {
             signupDTO.setRoles(new HashSet<>(Set.of("ROLE_USER")));
         }
@@ -60,7 +60,6 @@ public class AuthServiceImpl implements AuthService{
             throw new GenericAPIException("One or more roles are invalid.");
         }
         Set<Role> roles = roleRepository.findByRoleNameIn(appRoles);
-
         User user = userMapper.signupToUser(signupDTO);
         user.setRoles(roles);
         return userRepository.save(user);
