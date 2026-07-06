@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
@@ -19,6 +20,7 @@ import lombok.Setter;
                 )
         }
 )
+@ToString
 public class Product {
 
     @Id
@@ -43,5 +45,10 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    @ManyToOne()
+    @JoinColumn(name = "seller_id")
+    @ToString.Exclude
+    private User user;
 
 }
