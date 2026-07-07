@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +27,18 @@ public class GlobalExceptionHandlerEcom {
                 });
 
         return ResponseEntity.status(e.getStatusCode()).body(map);
+    }
+
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public ResponseEntity<Map<String,String>> sqlDuplicateException(
+            SQLIntegrityConstraintViolationException e
+    )
+    {
+        Map<String,String> map = new HashMap<>();
+        map.put("message","Resource already exists.");
+        map.put("error",e.getMessage());
+
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(map);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)

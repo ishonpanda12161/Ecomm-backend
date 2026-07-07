@@ -21,7 +21,8 @@ public class JwtFilter extends OncePerRequestFilter {
     private final JwtUtils jwtUtils;
     private final UserDetailsServiceImpl securityUserService;
     @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException
+    {
 
         if(SecurityContextHolder.getContext().getAuthentication()!=null)
         {
@@ -29,15 +30,12 @@ public class JwtFilter extends OncePerRequestFilter {
             return;
         }
 
-        String header = request.getHeader("Authorization");
-        if(header==null || !header.startsWith("Bearer "))
+        String token = parseToken(request);
+        if(token==null)
         {
             filterChain.doFilter(request,response);
             return;
         }
-
-        String token = header.substring(7);
-
         if(!jwtUtils.valid(token))
         {
             filterChain.doFilter(request,response);
@@ -57,4 +55,10 @@ public class JwtFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(auth);
         filterChain.doFilter(request,response);
     }
+
+    private String parseToken(HttpServletRequest request)
+    {
+        return jwtUtils.getTokenFromCookie(request);
+    }
 }
+

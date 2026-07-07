@@ -9,6 +9,7 @@ import com.ecom.backend.model.Role;
 import com.ecom.backend.model.User;
 import com.ecom.backend.payload.LoginRequest;
 import com.ecom.backend.payload.LoginResponse;
+import com.ecom.backend.payload.LoginResult;
 import com.ecom.backend.payload.SignupDTO;
 import com.ecom.backend.repository.RoleRepository;
 import com.ecom.backend.repository.UserRepository;
@@ -17,6 +18,7 @@ import com.ecom.backend.security.jwt.JwtUtils;
 import jakarta.validation.Valid;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,7 +26,10 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -65,19 +70,27 @@ public class AuthServiceImpl implements AuthService{
         return userRepository.save(user);
     }
 
-    public LoginResponse signUser(LoginRequest loginRequest) {
+    public LoginResult signUser(LoginRequest loginRequest) {
         try{
             Authentication auth = new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),loginRequest.getPassword());
             auth = authenticationManager.authenticate(auth);
             SecurityContextHolder.getContext().setAuthentication(auth);
-
             UserDetailsImpl userDetails = (UserDetailsImpl) auth.getPrincipal();
-            String token = jwtUtils.generateToken(userDetails.getUsername());
-            return new LoginResponse(token,userDetails.getUsername(),userDetails.getAuthorities(),userDetails.getId(),userDetails.getEmail());
+            ResponseCookie cookie = jwtUtils.generateJwtCookie(userDetails);
+
+            return new LoginResult(
+                    new LoginResponse(cookie.getValue(),userDetails.getUsername(),userDetails.getAuthorities(),
+                            userDetails.getId(),userDetails.getEmail())
+                    ,cookie);
         }
         catch (AuthenticationException e)
         {
             throw new ResourceNotFoundException("User","username",loginRequest.getUsername());
         }
+    }
+
+    @Override
+    public ResponseCookie signoutUser() {
+        return jwtUtils.cleanCookie();
     }
 }

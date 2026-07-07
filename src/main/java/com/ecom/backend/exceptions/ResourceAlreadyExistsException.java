@@ -18,7 +18,6 @@ public class ResourceAlreadyExistsException extends RuntimeException {
     public ResourceAlreadyExistsException(String resourceName, Long id) {
         super(resourceName+" already exists with id: "+id+".");
         this.resourceName = resourceName;
-        this.fieldName = fieldName;
         this.id = id;
     }
 }

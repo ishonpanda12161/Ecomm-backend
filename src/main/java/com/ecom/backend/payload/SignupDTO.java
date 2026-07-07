@@ -17,17 +17,17 @@ public class SignupDTO {
     private String name;
 
     @NotBlank
-    @Size(min = 5,message = "Must contain at least 3 characters.")
+    @Size(min = 3,message = "Must contain at least 3 characters.")
     @Column(name = "username")
     private String username;
 
     @NotBlank
-    @Size(min = 5,message = "Must contain at least 3 characters.")
+    @Size(min = 3,message = "Must contain at least 3 characters.")
     private String password;
 
     @Email
     @NotBlank
-    @Size(min = 3,message = "Must contain at least 3 characters.")
+    @Size(min = 11,message = "Must contain at least 3 characters.")
     @Column(name = "email")
     private String email;
 

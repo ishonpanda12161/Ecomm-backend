@@ -1,17 +1,22 @@
 package com.ecom.backend.controller;
 
+import com.ecom.backend.exceptions.GenericAPIException;
 import com.ecom.backend.model.User;
-import com.ecom.backend.payload.LoginRequest;
-import com.ecom.backend.payload.LoginResponse;
-import com.ecom.backend.payload.SignupDTO;
+import com.ecom.backend.payload.*;
+import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.service.AuthServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/open")
@@ -34,10 +39,32 @@ public class AuthController {
             @Valid @RequestBody LoginRequest loginRequest
             )
     {
-
-        return ResponseEntity.ok().body(authService.signUser(loginRequest));
-
+        LoginResult loginResult = authService.signUser(loginRequest);
+        return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,loginResult.responseCookie().toString()).body(loginResult.loginResponse());
     }
 
+    @PostMapping("/signout")
+    public ResponseEntity<?> signout()
+    {
+        ResponseCookie cookie = authService.signoutUser();
+        return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,cookie.toString()).body(new HashMap<>(Map.of("message","You have been signed out.")));
+    }
+
+    @GetMapping("/username")
+    public String getUsername(Authentication authentication)
+    {
+        if(authentication==null) throw new GenericAPIException("NULL");
+        return authentication.getName();
+    }
+
+    @GetMapping("/user")
+    public UserDetails getUserDetails(Authentication authentication)
+    {
+        if(authentication==null)
+        {
+            throw new GenericAPIException("NULL");
+        }
+        return (UserDetailsImpl) authentication.getPrincipal();
+    }
 
 }
