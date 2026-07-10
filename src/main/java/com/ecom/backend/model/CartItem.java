@@ -1,6 +1,9 @@
 package com.ecom.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -13,16 +16,21 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
 
     private Integer quantity;
-    private Double discount;
-    private Double productPrice;
 
+    public CartItem(Product product,Integer quantity,Cart cart) {
+        this.product = product;
+        this.quantity = quantity;
+        this.cart = cart;
+    }
 }

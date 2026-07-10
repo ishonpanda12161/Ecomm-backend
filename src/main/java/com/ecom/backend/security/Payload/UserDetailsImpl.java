@@ -1,6 +1,7 @@
 package com.ecom.backend.security.Payload;
 
 import com.ecom.backend.model.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-@RequiredArgsConstructor
+
 public class UserDetailsImpl implements UserDetails {
 
     private User user;
@@ -41,7 +42,8 @@ public class UserDetailsImpl implements UserDetails {
         return user.getId();
     }
 
-    private User getUser()
+    @JsonIgnore
+    public User getUser()
     {
         return this.user;
     }

@@ -1,5 +1,6 @@
 package com.ecom.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -47,6 +48,7 @@ public class Address {
     @Size(min = 6,message = "Pin-code name must be at least 3 characters.")
     private String pinCode;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "addresses")
     @ToString.Exclude
     private List<User> users = new ArrayList<>();
