@@ -83,7 +83,7 @@ public class AuthServiceImpl implements AuthService{
                             userDetails.getId(),userDetails.getEmail())
                     ,cookie);
         }
-        catch (AuthenticationException e)
+        catch (Exception e)
         {
             throw new ResourceNotFoundException("User","username",loginRequest.getUsername());
         }

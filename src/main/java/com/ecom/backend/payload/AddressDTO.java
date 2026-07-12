@@ -1,27 +1,16 @@
-package com.ecom.backend.model;
+package com.ecom.backend.payload;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@ToString
-public class Address {
+@AllArgsConstructor
+public class AddressDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "address_id")
     private Long id;
 
     @NotBlank
@@ -45,13 +34,7 @@ public class Address {
     private String country;
 
     @NotBlank
-    @Size(min = 5,message = "Pin-code name must be at least 5 characters.")
+    @Size(min = 5,message = "Pin-code name must be 5 characters.")
     private String pincode;
-
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
 
 }
