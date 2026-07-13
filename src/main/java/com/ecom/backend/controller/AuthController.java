@@ -6,6 +6,9 @@ import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.service.AuthServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
@@ -14,13 +17,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/api/open")
 @RequiredArgsConstructor
+@Slf4j
 public class AuthController {
-
 
     private final AuthServiceImpl authService;
 

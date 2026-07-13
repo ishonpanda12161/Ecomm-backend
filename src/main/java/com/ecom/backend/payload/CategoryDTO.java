@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CategoryDTO {
-    private Long categoryId;
+    private Long id;
     @NotBlank
     @Size(min = 3,max = 25,message = "Minimum 3 length and cannot exceed 20.")
     private String categoryName;

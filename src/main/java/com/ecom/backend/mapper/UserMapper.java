@@ -8,7 +8,12 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-    @Mapping(target = "roles",ignore = true)
+
+    @Mapping(target = "roles", ignore = true)
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "products", ignore = true)
+    @Mapping(target = "addresses", ignore = true)
+    @Mapping(target = "cart", ignore = true)
     User signupToUser(SignupDTO signupDTO);
 
     UserDTO toDTO(User user);

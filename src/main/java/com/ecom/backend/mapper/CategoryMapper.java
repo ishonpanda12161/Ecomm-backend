@@ -9,7 +9,11 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
+
     CategoryDTO toDTO(Category category);
+
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "products", ignore = true)
     Category toModel(CategoryDTO categoryDTO);
     List<CategoryDTO> toDTOList(List<Category> categories);
 

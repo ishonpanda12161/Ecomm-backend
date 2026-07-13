@@ -1,0 +1,16 @@
+14-07-2026 01:59 - Starting BackendApplication using Java 25.0.1 with PID 28048 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 01:59 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 01:59 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 02:00 - Filter 'jwtFilter' configured for use
+14-07-2026 02:00 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 02:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 02:00 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 02:00 - Started BackendApplication in 4.344 seconds (process running for 4.911)
+14-07-2026 02:01 - Starting BackendApplication using Java 25.0.1 with PID 12776 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 02:01 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 02:01 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 02:01 - Filter 'jwtFilter' configured for use
+14-07-2026 02:01 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 02:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 02:01 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 02:01 - Started BackendApplication in 4.263 seconds (process running for 4.83)

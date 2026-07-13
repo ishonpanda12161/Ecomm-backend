@@ -81,8 +81,8 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public String updateCategory(CategoryDTO categoryDTO) {
 
-        Category cat = categoryRepository.findById(categoryDTO.getCategoryId())
-                .orElseThrow(()-> new ResourceNotFoundException("Category","ID", categoryDTO.getCategoryId()));
+        Category cat = categoryRepository.findById(categoryDTO.getId())
+                .orElseThrow(()-> new ResourceNotFoundException("Category","ID", categoryDTO.getId()));
         cat.setCategoryName(categoryDTO.getCategoryName());
         categoryRepository.save(cat);
         return "Updated!";

@@ -3,7 +3,6 @@ package com.ecom.backend.service;
 import com.ecom.backend.exceptions.GenericAPIException;
 import com.ecom.backend.exceptions.JwtException;
 import com.ecom.backend.exceptions.ResourceAlreadyExistsException;
-import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.mapper.UserMapper;
 import com.ecom.backend.model.AppRoles;
 import com.ecom.backend.model.Role;
@@ -13,9 +12,10 @@ import com.ecom.backend.repository.RoleRepository;
 import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.security.jwt.JwtUtils;
-import jakarta.validation.Valid;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseCookie;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -24,15 +24,13 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class AuthServiceImpl implements AuthService{
 
     private final UserRepository userRepository;
@@ -43,6 +41,7 @@ public class AuthServiceImpl implements AuthService{
     private final AuthenticationManager authenticationManager;
 
     public UserDTO createUser(SignupDTO signupDTO) {
+
         if(userRepository.existsByUsername(signupDTO.getUsername()))
         {
             throw new ResourceAlreadyExistsException("User","username",signupDTO.getUsername());

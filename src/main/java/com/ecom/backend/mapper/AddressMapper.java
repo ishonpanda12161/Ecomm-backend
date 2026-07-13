@@ -11,10 +11,14 @@ public interface AddressMapper {
 
 
     AddressDTO toDto(Address address);
+
+    @Mapping(target = "user", ignore = true)
+    @Mapping(target = "orders", ignore = true)
     Address toEntity(AddressDTO addressDTO);
 
     @Mapping(target = "id",ignore = true)
     @Mapping(target = "user",ignore = true)
+    @Mapping(target = "orders", ignore = true)
     void updateAddressFromAddressDTO(AddressDTO addressDTO, @MappingTarget Address address);
 
 }
