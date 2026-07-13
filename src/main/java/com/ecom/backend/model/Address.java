@@ -53,5 +53,9 @@ public class Address {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToMany(mappedBy = "address")
+    private List<Order> orders = new ArrayList<>();
 
 }

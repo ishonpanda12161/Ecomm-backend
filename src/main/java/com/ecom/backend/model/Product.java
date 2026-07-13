@@ -1,5 +1,6 @@
 package com.ecom.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -59,4 +60,7 @@ public class Product {
     @ToString.Exclude
     private User user;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "product")
+    private List<OrderItem> orderItems = new ArrayList<>();
 }
