@@ -27,9 +27,10 @@ public class Order {
     @OneToMany(mappedBy = "order",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private List<OrderItem> orderItemList = new ArrayList<>();
 
+
     private LocalDate date;
 
-    private Double Total;
+    private Double total;
     private String status;
 
     @ManyToOne

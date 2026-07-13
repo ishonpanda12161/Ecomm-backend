@@ -8,6 +8,7 @@ import com.ecom.backend.model.Category;
 import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.repository.CategoryRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,15 +17,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
 
-    public CategoryServiceImpl(CategoryRepository categoryRepository, CategoryMapper categoryMapper) {
-        this.categoryRepository = categoryRepository;
-        this.categoryMapper = categoryMapper;
-    }
 
     @Override
     public CategoryResponseDTO getAllCategories(Integer pageNum, Integer pageSize,String sortBy,String sortDir) {
@@ -53,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public void createCategory(CategoryDTO categoryDTO) {
+    public Category createCategory(CategoryDTO categoryDTO) {
 
         Category category = categoryMapper.toModel(categoryDTO);
         Category temp = categoryRepository.findByCategoryName(category.getCategoryName());
@@ -61,7 +59,7 @@ public class CategoryServiceImpl implements CategoryService{
         {
             throw new ResourceAlreadyExistsException("Category",category.getCategoryId());
         }
-        categoryRepository.save(category);
+        return categoryRepository.save(category);
     }
 
     @Override

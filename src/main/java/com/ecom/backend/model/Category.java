@@ -24,7 +24,7 @@ public class Category {
 
     @OneToMany(
             mappedBy = "category",
-            cascade = CascadeType.ALL
+            cascade = {CascadeType.PERSIST,CascadeType.MERGE}
     )
     private List<Product> products;
 }

@@ -19,6 +19,7 @@ public class Role {
      private Integer id;
 
     @Enumerated(EnumType.STRING)
+    @Column(unique = true)
     private AppRoles roleName;
 
     @JsonIgnore

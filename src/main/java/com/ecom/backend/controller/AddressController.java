@@ -49,10 +49,11 @@ public class AddressController {
     }
 
     @DeleteMapping("/public/address/{id}")
-    public ResponseEntity<String> deleteAddressById(
+    public ResponseEntity<Void> deleteAddressById(
             @PathVariable Long id
     )
     {
-        return ResponseEntity.status(HttpStatus.OK).body(addressService.deleteById(id));
+        addressService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }

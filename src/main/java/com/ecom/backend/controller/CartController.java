@@ -1,16 +1,13 @@
 package com.ecom.backend.controller;
 
 
-import com.ecom.backend.model.Cart;
 import com.ecom.backend.payload.CartDTO;
 import com.ecom.backend.payload.CartItemDTO;
 import com.ecom.backend.service.CartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -35,7 +32,7 @@ public class CartController {
         return ResponseEntity.ok().body(cartService.getUserCart());
     }
 
-    @PutMapping("/public/cart/udpate/product/{productId}/operation/{operation}")
+    @PutMapping("/public/cart/update/product/{productId}/operation/{operation}")
     public ResponseEntity<CartDTO> updateUserCart(
             @PathVariable Long productId,
             @PathVariable String operation
@@ -45,11 +42,12 @@ public class CartController {
     }
 
     @DeleteMapping("/public/cart/delete/product/{productId}")
-    public ResponseEntity<CartDTO> updateUserCart(
+    public ResponseEntity<Void> deleteUserCart(
             @PathVariable Long productId
     )
     {
-        return ResponseEntity.ok().body(cartService.deleteProduct(productId));
+        cartService.deleteProduct(productId);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/admin/carts")

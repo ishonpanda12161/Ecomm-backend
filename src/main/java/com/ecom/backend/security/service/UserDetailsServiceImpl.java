@@ -1,5 +1,6 @@
 package com.ecom.backend.security.service;
 
+import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.model.User;
 import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
@@ -22,7 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         User user = userRepository.findByUsername(username);
         if(user==null)
         {
-            return null;
+            throw new ResourceNotFoundException("User","username",username);
         }
         return new UserDetailsImpl(user);
     }

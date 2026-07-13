@@ -9,10 +9,13 @@ import java.util.List;
 
 public interface CartService {
 
+    @Transactional
     CartItemDTO addToCart(Long productId, Integer quantity);
 
+    @Transactional(readOnly = true)
     List<CartDTO> getAllCarts();
 
+    @Transactional(readOnly = true)
     CartDTO getUserCart();
 
     @Transactional

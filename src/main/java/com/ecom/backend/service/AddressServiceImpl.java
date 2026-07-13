@@ -21,7 +21,7 @@ public class AddressServiceImpl implements AddressService {
     private final AddressMapper addressMapper;
     private final AuthUtil authUtil;
 
-
+    @Transactional
     @Override
     public AddressDTO createAddress(AddressDTO addressDTO) {
         User user = authUtil.loggedInUser();
@@ -36,6 +36,7 @@ public class AddressServiceImpl implements AddressService {
         return addressMapper.toDto(addressRepository.save(address));
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<AddressDTO> getAllAddresses() {
         User user = authUtil.loggedInUser();
@@ -43,6 +44,7 @@ public class AddressServiceImpl implements AddressService {
         return addressDTOS;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public AddressDTO getAddressById(Long id) {
         User user = authUtil.loggedInUser();
@@ -61,6 +63,7 @@ public class AddressServiceImpl implements AddressService {
         return addressMapper.toDto(addressRepository.save(address));
     }
 
+    @Transactional
     @Override
     public String deleteById(Long id) {
         User user = authUtil.loggedInUser();

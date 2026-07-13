@@ -1,5 +1,7 @@
 package com.ecom.backend.filters;
 
+import com.ecom.backend.exceptions.GenericAPIException;
+import com.ecom.backend.exceptions.JwtException;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.security.jwt.JwtUtils;
 import com.ecom.backend.security.service.UserDetailsServiceImpl;
@@ -33,13 +35,14 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = parseToken(request);
         if(token==null)
         {
-            filterChain.doFilter(request,response);
-            return;
+            throw new JwtException("Null token.","Validation");
         }
-        if(!jwtUtils.valid(token))
+        try{
+            jwtUtils.valid(token);
+        }
+        catch (JwtException e)
         {
-            filterChain.doFilter(request,response);
-            return;
+            throw new JwtException("Invalid token.","Validation");
         }
 
         String username = jwtUtils.extractUsername(token);
@@ -47,8 +50,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if(user==null)
         {
-            filterChain.doFilter(request,response);
-            return;
+            throw new JwtException("Cannot find user.","Database");
         }
 
         UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user,null,user.getAuthorities());

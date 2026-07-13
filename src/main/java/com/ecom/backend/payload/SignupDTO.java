@@ -1,11 +1,9 @@
 package com.ecom.backend.payload;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,12 +11,10 @@ import java.util.Set;
 public class SignupDTO {
     @NotBlank
     @Size(min = 2,message = "Name contain at least 2 characters.")
-    @Column(name = "name")
     private String name;
 
     @NotBlank
     @Size(min = 3,message = "Must contain at least 3 characters.")
-    @Column(name = "username")
     private String username;
 
     @NotBlank
@@ -28,7 +24,6 @@ public class SignupDTO {
     @Email
     @NotBlank
     @Size(min = 11,message = "Must contain at least 3 characters.")
-    @Column(name = "email")
     private String email;
 
     private Set<String> roles = new HashSet<>();

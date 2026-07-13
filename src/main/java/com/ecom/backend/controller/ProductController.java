@@ -1,12 +1,11 @@
 package com.ecom.backend.controller;
 
 import com.ecom.backend.config.AppConstants;
-import com.ecom.backend.model.Category;
 import com.ecom.backend.payload.ProductDTO;
 import com.ecom.backend.payload.ProductResponseDTO;
 import com.ecom.backend.service.ProductServiceImpl;
 import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/api")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ProductController {
 
     private final ProductServiceImpl productService;
@@ -83,10 +82,11 @@ public class ProductController {
     }
 
     @DeleteMapping("/admin/products/{productId}")
-    public ResponseEntity<ProductDTO> deleteProduct(
+    public ResponseEntity<Void> deleteProduct(
             @PathVariable Long productId
     )
     {
-        return ResponseEntity.ok().body(productService.deleteProduct(productId));
+        productService.deleteProduct(productId);
+        return ResponseEntity.noContent().build();
     }
 }

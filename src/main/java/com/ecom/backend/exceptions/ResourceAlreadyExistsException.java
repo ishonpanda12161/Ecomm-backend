@@ -4,7 +4,6 @@ public class ResourceAlreadyExistsException extends RuntimeException {
 
     String resourceName;
     String fieldName;
-
     String field;
     Long id;
 

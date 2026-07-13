@@ -1,7 +1,7 @@
 package com.ecom.backend.controller;
 
 import com.ecom.backend.exceptions.GenericAPIException;
-import com.ecom.backend.model.User;
+import com.ecom.backend.model.Role;
 import com.ecom.backend.payload.*;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.service.AuthServiceImpl;
@@ -10,13 +10,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/open")
@@ -27,7 +25,7 @@ public class AuthController {
     private final AuthServiceImpl authService;
 
     @PostMapping("/signup")
-    public ResponseEntity<User> signup(
+    public ResponseEntity<UserDTO> signup(
             @Valid @RequestBody SignupDTO signupDTO
             )
     {
@@ -58,13 +56,15 @@ public class AuthController {
     }
 
     @GetMapping("/user")
-    public UserDetails getUserDetails(Authentication authentication)
+    public UserResponseDTO getUserDetails(Authentication authentication)
     {
         if(authentication==null)
         {
             throw new GenericAPIException("NULL");
         }
-        return (UserDetailsImpl) authentication.getPrincipal();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+
+        return new UserResponseDTO(userDetails.getId(),userDetails.getUsername(),userDetails.getEmail(), (Set<Role>) userDetails.getAuthorities());
     }
 
 }

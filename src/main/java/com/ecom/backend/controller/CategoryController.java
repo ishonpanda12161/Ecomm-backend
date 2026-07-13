@@ -2,6 +2,7 @@ package com.ecom.backend.controller;
 
 
 import com.ecom.backend.config.AppConstants;
+import com.ecom.backend.model.Category;
 import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.service.CategoryService;
@@ -36,25 +37,24 @@ public class CategoryController {
 
     @PostMapping("/admin/categoryBulk")
     public ResponseEntity<String> createBulk(
-            @RequestBody List<CategoryDTO> categories
+            @RequestBody @Valid List<CategoryDTO> categoryDTOS
     )
     {
-            categoryService.createBulkCategories(categories);
+            categoryService.createBulkCategories(categoryDTOS);
             return ResponseEntity.ok().body("Created");
     }
 
     @PostMapping("/admin/category")
-    public ResponseEntity<CategoryDTO> createCategory(
+    public ResponseEntity<Category> createCategory(
            @Valid @RequestBody CategoryDTO categoryDTO
     )
     {
-        categoryService.createCategory(categoryDTO);
-        return ResponseEntity.status(HttpStatus.CREATED).body(categoryDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(categoryService.createCategory(categoryDTO));
     }
 
     @PutMapping("/admin/category")
     public ResponseEntity<String> updateCategory(
-            @RequestBody CategoryDTO categoryDTO
+            @RequestBody @Valid CategoryDTO categoryDTO
     )
     {
         String res = categoryService.updateCategory(categoryDTO);
@@ -62,12 +62,12 @@ public class CategoryController {
     }
 
     @DeleteMapping("/admin/category/{categoryId}")
-    public ResponseEntity<String> deleteCategory(
+    public ResponseEntity<Void> deleteCategory(
             @PathVariable Long categoryId
     )
     {
         String status = categoryService.deleteCategory(categoryId);
-        return ResponseEntity.ok(status);
+        return ResponseEntity.noContent().build();
     }
 
 

@@ -24,6 +24,7 @@ public class UserDetailsImpl implements UserDetails {
         return user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getRoleName().name())).collect(Collectors.toSet());
     }
 
+    @JsonIgnore
     @Override
     public @Nullable String getPassword() {
         return user.getPassword();

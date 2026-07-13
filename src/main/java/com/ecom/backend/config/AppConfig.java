@@ -21,7 +21,14 @@ public class AppConfig {
             Role user = new Role(AppRoles.ROLE_USER);
             Role admin = new Role(AppRoles.ROLE_ADMIN);
             Role guest = new Role(AppRoles.ROLE_SELLER);
-            roleRepository.saveAll(new HashSet<>(Set.of(user,admin,guest)));
+            Set<Role> roles = new HashSet<>(Set.of(user,admin,guest));
+
+            roles.forEach(role -> {
+                if(roleRepository.findByRoleName(role.getRoleName()).isEmpty())
+                {
+                    roleRepository.save(role);
+                }
+            });
         };
     }
 }

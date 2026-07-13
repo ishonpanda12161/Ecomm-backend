@@ -8,6 +8,7 @@ import com.ecom.backend.model.Category;
 import com.ecom.backend.model.Product;
 import com.ecom.backend.payload.ProductDTO;
 import com.ecom.backend.payload.ProductResponseDTO;
+import com.ecom.backend.repository.CartItemRepository;
 import com.ecom.backend.repository.CategoryRepository;
 import com.ecom.backend.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -33,6 +35,7 @@ public class ProductServiceImpl implements ProductService{
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final CartItemRepository cartItemRepository;
 
     @Value("${project.image}")
     private String path;
@@ -54,6 +57,7 @@ public class ProductServiceImpl implements ProductService{
         return productMapper.toDTO(product);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public ProductResponseDTO getAllProducts(Integer pageNum, Integer pageSize, String sortBy, String sortDir) {
 
@@ -148,8 +152,10 @@ public class ProductServiceImpl implements ProductService{
     public ProductDTO deleteProduct(Long productId) {
         Product product = productRepository.findById(productId)
                 .orElseThrow(()->new ResourceNotFoundException("Product","productId",productId));
-        productRepository.delete(product);
-        return productMapper.toDTO(product);
+//        productRepository.delete(product);
+        cartItemRepository.deleteByProductId(productId);
+        product.setIsActive(false);
+        return productMapper.toDTO(productRepository.save(product));
     }
 
     @Override

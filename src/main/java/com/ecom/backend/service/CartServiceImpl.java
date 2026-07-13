@@ -34,6 +34,7 @@ public class CartServiceImpl implements CartService{
     private final AuthUtil authUtil;
     private final CartMapper cartMapper;
 
+    @Transactional
     @Override
     public CartItemDTO addToCart(Long productId, Integer quantity) {
 
@@ -54,12 +55,14 @@ public class CartServiceImpl implements CartService{
         return cartItemDTO;
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<CartDTO> getAllCarts() {
         List<Cart> carts = cartRepository.findAll();
         return cartMapper.getCartDtoList(carts);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public CartDTO getUserCart() {
         CartDTO cartDTO = cartMapper.getCartDto(getCart());

@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.SQLRestriction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +27,17 @@ import java.util.List;
         }
 )
 @ToString
+@SQLRestriction("isActive = true")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Version
+    private Long version;
+
+    private boolean isActive = true;
 
     @NotBlank
     @Size(min = 3,message = "Must contain at least 3 characters.")
@@ -63,4 +70,9 @@ public class Product {
     @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<OrderItem> orderItems = new ArrayList<>();
+
+    public void setIsActive(boolean isActive)
+    {
+        this.isActive = isActive;
+    }
 }

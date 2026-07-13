@@ -1,16 +1,14 @@
 package com.ecom.backend.service;
 
 import com.ecom.backend.exceptions.GenericAPIException;
+import com.ecom.backend.exceptions.JwtException;
 import com.ecom.backend.exceptions.ResourceAlreadyExistsException;
 import com.ecom.backend.exceptions.ResourceNotFoundException;
 import com.ecom.backend.mapper.UserMapper;
 import com.ecom.backend.model.AppRoles;
 import com.ecom.backend.model.Role;
 import com.ecom.backend.model.User;
-import com.ecom.backend.payload.LoginRequest;
-import com.ecom.backend.payload.LoginResponse;
-import com.ecom.backend.payload.LoginResult;
-import com.ecom.backend.payload.SignupDTO;
+import com.ecom.backend.payload.*;
 import com.ecom.backend.repository.RoleRepository;
 import com.ecom.backend.repository.UserRepository;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
@@ -44,7 +42,7 @@ public class AuthServiceImpl implements AuthService{
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
 
-    public User createUser(SignupDTO signupDTO) {
+    public UserDTO createUser(SignupDTO signupDTO) {
         if(userRepository.existsByUsername(signupDTO.getUsername()))
         {
             throw new ResourceAlreadyExistsException("User","username",signupDTO.getUsername());
@@ -67,7 +65,8 @@ public class AuthServiceImpl implements AuthService{
         Set<Role> roles = roleRepository.findByRoleNameIn(appRoles);
         User user = userMapper.signupToUser(signupDTO);
         user.setRoles(roles);
-        return userRepository.save(user);
+        return userMapper.toDTO(userRepository.save(user));
+
     }
 
     public LoginResult signUser(LoginRequest loginRequest) {
@@ -83,9 +82,9 @@ public class AuthServiceImpl implements AuthService{
                             userDetails.getId(),userDetails.getEmail())
                     ,cookie);
         }
-        catch (Exception e)
+        catch (AuthenticationException e)
         {
-            throw new ResourceNotFoundException("User","username",loginRequest.getUsername());
+            throw new JwtException("Could not authenticate","Authentication");
         }
     }
 
