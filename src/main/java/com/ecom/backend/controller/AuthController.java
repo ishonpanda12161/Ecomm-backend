@@ -1,13 +1,13 @@
 package com.ecom.backend.controller;
 
 import com.ecom.backend.exceptions.GenericAPIException;
-import com.ecom.backend.model.Role;
 import com.ecom.backend.payload.*;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.service.AuthServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -29,7 +29,7 @@ public class AuthController {
             @Valid @RequestBody SignupDTO signupDTO
             )
     {
-        return ResponseEntity.ok(authService.createUser(signupDTO));
+        return ResponseEntity.status(HttpStatus.CREATED).body(authService.createUser(signupDTO));
     }
 
     @PostMapping("/signin")
@@ -64,7 +64,7 @@ public class AuthController {
         }
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-        return new UserResponseDTO(userDetails.getId(),userDetails.getUsername(),userDetails.getEmail(), (Set<Role>) userDetails.getAuthorities());
+        return new UserResponseDTO(userDetails.getId(),userDetails.getUsername(),userDetails.getEmail(), userDetails.getAuthorities());
     }
 
 }

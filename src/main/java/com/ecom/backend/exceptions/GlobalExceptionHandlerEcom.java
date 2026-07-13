@@ -16,11 +16,11 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandlerEcom {
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> exception(Exception e)
-    {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error.");
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<String> exception(Exception e)
+//    {
+//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal Server Error.");
+//    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String,String>> resourceArgumentNotValidException(

@@ -1,9 +1,6 @@
 package com.ecom.backend.payload;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,7 +30,6 @@ public class ProductDTO {
     private Double price;
 
     @NotNull
-    @Positive
     private Double discount;
 
     private Double specialPrice;

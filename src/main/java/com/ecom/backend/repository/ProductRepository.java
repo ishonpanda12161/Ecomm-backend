@@ -13,4 +13,5 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     Page<Product> findByCategory(Category category, Pageable pageDetails);
     Page<Product> findByProductNameContainingIgnoreCase(String keyword, Pageable pageDetails);
     boolean existsByProductName(String productName);
+    boolean existsByCategory(Category category);
 }

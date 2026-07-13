@@ -1,6 +1,5 @@
 package com.ecom.backend.filters;
 
-import com.ecom.backend.exceptions.GenericAPIException;
 import com.ecom.backend.exceptions.JwtException;
 import com.ecom.backend.security.Payload.UserDetailsImpl;
 import com.ecom.backend.security.jwt.JwtUtils;
@@ -35,14 +34,12 @@ public class JwtFilter extends OncePerRequestFilter {
         String token = parseToken(request);
         if(token==null)
         {
-            throw new JwtException("Null token.","Validation");
+            filterChain.doFilter(request,response);
+            return;
         }
-        try{
-            jwtUtils.valid(token);
-        }
-        catch (JwtException e)
-        {
-            throw new JwtException("Invalid token.","Validation");
+
+        if (!jwtUtils.valid(token)) {
+            throw new JwtException("Invalid token.", "Validation");
         }
 
         String username = jwtUtils.extractUsername(token);

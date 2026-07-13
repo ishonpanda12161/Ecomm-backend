@@ -52,6 +52,7 @@ public class ProductServiceImpl implements ProductService{
 
         Product product = productMapper.toModel(productDTO);
         setProductAttributes(product,category,"default.png");
+        product.setIsActive(true);
         productRepository.save(product);
 
         return productMapper.toDTO(product);
@@ -138,6 +139,7 @@ public class ProductServiceImpl implements ProductService{
         return responseDTO;
     }
 
+
     @Override
     public ProductDTO updateProduct(Long productId, ProductDTO entity) {
 
@@ -148,6 +150,7 @@ public class ProductServiceImpl implements ProductService{
         return productMapper.toDTO(product);
     }
 
+    @Transactional
     @Override
     public ProductDTO deleteProduct(Long productId) {
         Product product = productRepository.findById(productId)

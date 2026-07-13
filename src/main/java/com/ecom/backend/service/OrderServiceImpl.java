@@ -99,7 +99,6 @@ public class OrderServiceImpl implements OrderService{
 
         for(CartItem cartItem : cartItemList)
         {
-
             OrderItem orderItem = new OrderItem();
             orderItem.setProduct(cartItem.getProduct());
             orderItem.setQuantity(cartItem.getQuantity());
@@ -112,17 +111,13 @@ public class OrderServiceImpl implements OrderService{
         orderItems = orderItemRepository.saveAll(orderItems);
         order.setOrderItemList(orderItems);
 
-        cartItemList.forEach(cartItem ->
+        for(CartItem cartItem : cartItemList)
         {
-            int quantity = cartItem.getQuantity();
             Product product = cartItem.getProduct();
-            product.setQuantity(product.getQuantity()-quantity);
-            //productRepository.save(product);
-
-            cartService.deleteProduct(product.getId());
-        });
-
-
+            product.setQuantity(product.getQuantity() - cartItem.getQuantity());
+        }
+        cart.getCartItems().clear();
+        cartRepository.save(cart);
         //create OrderDTO
 
         OrderDTO orderDTO = orderMapper.toDTO(order);

@@ -8,12 +8,15 @@ import com.ecom.backend.model.Category;
 import com.ecom.backend.payload.CategoryDTO;
 import com.ecom.backend.payload.CategoryResponseDTO;
 import com.ecom.backend.repository.CategoryRepository;
+import com.ecom.backend.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
@@ -22,7 +25,7 @@ public class CategoryServiceImpl implements CategoryService{
 
     private final CategoryRepository categoryRepository;
     private final CategoryMapper categoryMapper;
-
+    private final ProductRepository productRepository;
 
     @Override
     public CategoryResponseDTO getAllCategories(Integer pageNum, Integer pageSize,String sortBy,String sortDir) {
@@ -57,16 +60,20 @@ public class CategoryServiceImpl implements CategoryService{
         Category temp = categoryRepository.findByCategoryName(category.getCategoryName());
         if(temp!=null)
         {
-            throw new ResourceAlreadyExistsException("Category",category.getCategoryId());
+            throw new ResourceAlreadyExistsException("Category",category.getId());
         }
         return categoryRepository.save(category);
     }
 
+    @Transactional
     @Override
     public String deleteCategory(Long categoryId) {
         Category category = categoryRepository.findById(categoryId)
                 .orElseThrow(() -> new ResourceNotFoundException("Category","ID",categoryId));
-
+        if(productRepository.existsByCategory(category))
+        {
+            throw new GenericAPIException("Cannot delete. Category contains products.");
+        }
         categoryRepository.delete(category);
         return category.getCategoryName() + "  deleted";
     }

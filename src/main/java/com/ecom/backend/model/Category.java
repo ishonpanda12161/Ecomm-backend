@@ -16,7 +16,7 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    private Long id;
 
     @NotBlank
     @Size(min = 3,max = 25,message = "Minimum 3 length and cannot exceed 20.")

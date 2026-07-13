@@ -38,6 +38,10 @@ public class CartServiceImpl implements CartService{
     @Override
     public CartItemDTO addToCart(Long productId, Integer quantity) {
 
+        if(quantity<1)
+        {
+            throw new GenericAPIException("Please add at least 1 product.");
+        }
         Cart cart = getCart();
         Product product = getProduct(productId,quantity);
 

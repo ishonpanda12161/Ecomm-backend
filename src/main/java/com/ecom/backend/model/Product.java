@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.SQLRestriction;
 
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ import java.util.List;
         }
 )
 @ToString
-@SQLRestriction("isActive = true")
+@SQLRestriction("is_active = true")
 public class Product {
 
     @Id
@@ -37,6 +39,7 @@ public class Product {
     @Version
     private Long version;
 
+    @Column(name = "is_active", nullable = false)
     private boolean isActive = true;
 
     @NotBlank
@@ -52,11 +55,13 @@ public class Product {
     @NotNull
     private Double price;
     @NotNull
+    @Min(0)
     private Double discount;
     private Double specialPrice;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @OnDelete(action = OnDeleteAction.SET_NULL)
     private Category category;
 
     @OneToMany(mappedBy = "product",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.REMOVE},orphanRemoval = true)
