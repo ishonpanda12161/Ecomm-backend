@@ -14,3 +14,639 @@
 14-07-2026 02:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 14-07-2026 02:01 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
 14-07-2026 02:01 - Started BackendApplication in 4.263 seconds (process running for 4.83)
+14-07-2026 12:02 - Starting BackendApplication using Java 25.0.1 with PID 18892 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:02 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:02 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:02 - Filter 'jwtFilter' configured for use
+14-07-2026 12:02 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:02 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:02 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:02 - Started BackendApplication in 6.746 seconds (process running for 7.624)
+14-07-2026 12:03 - Securing GET /actuator
+14-07-2026 12:03 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:03 - Saved request http://localhost:8080/actuator?continue to session
+14-07-2026 12:03 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:03 - Securing GET /error
+14-07-2026 12:03 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:03 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:03 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:03 - Securing GET /actuator
+14-07-2026 12:03 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:03 - Saved request http://localhost:8080/actuator?continue to session
+14-07-2026 12:03 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:03 - Securing GET /error
+14-07-2026 12:03 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:03 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:03 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:03 - Starting BackendApplication using Java 25.0.1 with PID 25672 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:03 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:03 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:04 - Filter 'jwtFilter' configured for use
+14-07-2026 12:04 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:04 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:04 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:04 - Started BackendApplication in 6.675 seconds (process running for 7.265)
+14-07-2026 12:04 - Securing GET /actuator
+14-07-2026 12:04 - Secured GET /actuator
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Securing GET /favicon.ico
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /error
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /actuator/health
+14-07-2026 12:04 - Secured GET /actuator/health
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Securing GET /favicon.ico
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /error
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /actuator
+14-07-2026 12:04 - Secured GET /actuator
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Securing GET /favicon.ico
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /error
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:04 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:04 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:04 - Securing GET /actuator/health/api/open/signup
+14-07-2026 12:04 - Secured GET /actuator/health/api/open/signup
+14-07-2026 12:04 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /actuator/health/{*api/open/signup}
+14-07-2026 12:05 - Secured GET /actuator/health/{*api/open/signup}
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /actuator/
+14-07-2026 12:05 - Secured GET /actuator/
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /error
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /actuator/
+14-07-2026 12:05 - Secured GET /actuator/
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /error
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /actuator
+14-07-2026 12:05 - Secured GET /actuator
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /favicon.ico
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /error
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /actuator
+14-07-2026 12:05 - Secured GET /actuator
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /actuator
+14-07-2026 12:05 - Secured GET /actuator
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Securing GET /favicon.ico
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /error
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:05 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:05 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:05 - Securing GET /actuator/health/{*path}
+14-07-2026 12:05 - Secured GET /actuator/health/{*path}
+14-07-2026 12:05 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:07 - Securing GET /actuator
+14-07-2026 12:07 - Secured GET /actuator
+14-07-2026 12:07 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:07 - Securing GET /actuator
+14-07-2026 12:07 - Secured GET /actuator
+14-07-2026 12:07 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:07 - Securing GET /actuator
+14-07-2026 12:07 - Secured GET /actuator
+14-07-2026 12:07 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Starting BackendApplication using Java 25.0.1 with PID 3672 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:10 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:10 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:10 - Filter 'jwtFilter' configured for use
+14-07-2026 12:10 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:10 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:10 - Started BackendApplication in 5.402 seconds (process running for 6.104)
+14-07-2026 12:10 - Securing GET /actuator
+14-07-2026 12:10 - Secured GET /actuator
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Securing GET /actuator/metrics
+14-07-2026 12:10 - Secured GET /actuator/metrics
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Securing GET /favicon.ico
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:10 - Securing GET /error
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:10 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:10 - Securing GET /actuator/metrics
+14-07-2026 12:10 - Secured GET /actuator/metrics
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Securing GET /favicon.ico
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:10 - Securing GET /error
+14-07-2026 12:10 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:10 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:10 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:11 - Securing GET /actuator/metrics/names/system.cpu.usage
+14-07-2026 12:11 - Secured GET /actuator/metrics/names/system.cpu.usage
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Securing GET /error
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:11 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:11 - Securing GET /actuator/metrics/names/system.cpu.usage
+14-07-2026 12:11 - Secured GET /actuator/metrics/names/system.cpu.usage
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Securing GET /error
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:11 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:11 - Securing GET /actuator/metrics/{requiredMetricName}
+14-07-2026 12:11 - Secured GET /actuator/metrics/{requiredMetricName}
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Securing GET /actuator/metrics/system
+14-07-2026 12:11 - Secured GET /actuator/metrics/system
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:11 - Securing GET /actuator/metrics/systemcpuusage
+14-07-2026 12:11 - Secured GET /actuator/metrics/systemcpuusage
+14-07-2026 12:11 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Secured GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /favicon.ico
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /error
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Secured GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /favicon.ico
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /error
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Secured GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /favicon.ico
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /error
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Secured GET /actuator/metrics/system.cpu.usage
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /favicon.ico
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /error
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Saved request http://localhost:8080/error?continue to session
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /actuator/conditins
+14-07-2026 12:12 - Secured GET /actuator/conditins
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Securing GET /error
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:12 - Securing GET /actuator/conditions
+14-07-2026 12:12 - Secured GET /actuator/conditions
+14-07-2026 12:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator
+14-07-2026 12:13 - Secured GET /actuator
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator/beans
+14-07-2026 12:13 - Secured GET /actuator/beans
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator
+14-07-2026 12:13 - Secured GET /actuator
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator/env
+14-07-2026 12:13 - Secured GET /actuator/env
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator
+14-07-2026 12:13 - Secured GET /actuator
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:13 - Securing GET /actuator/info
+14-07-2026 12:13 - Secured GET /actuator/info
+14-07-2026 12:13 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:14 - Securing GET /actuator/metrics
+14-07-2026 12:14 - Secured GET /actuator/metrics
+14-07-2026 12:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:14 - Securing GET /actuator/metrics/disk.free
+14-07-2026 12:14 - Secured GET /actuator/metrics/disk.free
+14-07-2026 12:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:14 - Securing GET /actuator/metrics
+14-07-2026 12:14 - Secured GET /actuator/metrics
+14-07-2026 12:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:14 - Securing GET /actuator/metrics/disk.total
+14-07-2026 12:14 - Secured GET /actuator/metrics/disk.total
+14-07-2026 12:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:16 - Securing GET /actuator/loggers
+14-07-2026 12:16 - Secured GET /actuator/loggers
+14-07-2026 12:16 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health
+14-07-2026 12:17 - Secured GET /actuator/health
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health/liveness
+14-07-2026 12:17 - Secured GET /actuator/health/liveness
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health/
+14-07-2026 12:17 - Secured GET /actuator/health/
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health/readiness
+14-07-2026 12:17 - Secured GET /actuator/health/readiness
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health/status
+14-07-2026 12:17 - Secured GET /actuator/health/status
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:17 - Securing GET /actuator/health/
+14-07-2026 12:17 - Secured GET /actuator/health/
+14-07-2026 12:17 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:18 - Securing GET /actuator/health/groups/liveness
+14-07-2026 12:18 - Secured GET /actuator/health/groups/liveness
+14-07-2026 12:18 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:18 - Securing GET /actuator/health/
+14-07-2026 12:18 - Secured GET /actuator/health/
+14-07-2026 12:18 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:18 - Securing GET /actuator/health/
+14-07-2026 12:18 - Secured GET /actuator/health/
+14-07-2026 12:18 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:20 - Starting BackendApplication using Java 25.0.1 with PID 35936 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:20 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:20 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:20 - Filter 'jwtFilter' configured for use
+14-07-2026 12:20 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:20 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:20 - Started BackendApplication in 5.106 seconds (process running for 5.654)
+14-07-2026 12:20 - Securing GET /actuator/health/
+14-07-2026 12:20 - Secured GET /actuator/health/
+14-07-2026 12:20 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:27 - Starting BackendApplication using Java 25.0.1 with PID 1068 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:27 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:27 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:27 - Filter 'jwtFilter' configured for use
+14-07-2026 12:27 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:27 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:27 - Started BackendApplication in 7.021 seconds (process running for 7.733)
+14-07-2026 12:27 - Starting BackendApplication using Java 25.0.1 with PID 10808 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:27 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:27 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:27 - Starting BackendApplication using Java 25.0.1 with PID 20336 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:27 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:27 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:27 - Filter 'jwtFilter' configured for use
+14-07-2026 12:27 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:27 - Filter 'jwtFilter' configured for use
+14-07-2026 12:27 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:27 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:28 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:28 - Started BackendApplication in 6.161 seconds (process running for 6.943)
+14-07-2026 12:28 - Started BackendApplication in 6.885 seconds (process running for 8.425)
+14-07-2026 12:28 - Starting BackendApplication using Java 25.0.1 with PID 8896 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:28 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:28 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:28 - Filter 'jwtFilter' configured for use
+14-07-2026 12:28 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:28 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:28 - Started BackendApplication in 7.221 seconds (process running for 8.011)
+14-07-2026 12:28 - Securing GET /actuator/info
+14-07-2026 12:28 - Secured GET /actuator/info
+14-07-2026 12:28 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:28 - Securing GET /actuator/info
+14-07-2026 12:28 - Secured GET /actuator/info
+14-07-2026 12:28 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:28 - Securing GET /actuator/info
+14-07-2026 12:28 - Secured GET /actuator/info
+14-07-2026 12:28 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:29 - Starting BackendApplication using Java 25.0.1 with PID 23604 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:29 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:29 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:29 - Filter 'jwtFilter' configured for use
+14-07-2026 12:29 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:29 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:29 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:29 - Started BackendApplication in 5.106 seconds (process running for 5.818)
+14-07-2026 12:29 - Starting BackendApplication using Java 25.0.1 with PID 26496 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 12:29 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 12:29 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 12:29 - Filter 'jwtFilter' configured for use
+14-07-2026 12:29 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 12:29 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 12:29 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 12:29 - Started BackendApplication in 5.353 seconds (process running for 6.031)
+14-07-2026 12:29 - Securing GET /actuator/info
+14-07-2026 12:29 - Secured GET /actuator/info
+14-07-2026 12:29 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:31 - Securing GET /actuator/metrics
+14-07-2026 12:31 - Secured GET /actuator/metrics
+14-07-2026 12:31 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:31 - Securing GET /actuator/metrics/hikaricp.connections
+14-07-2026 12:31 - Secured GET /actuator/metrics/hikaricp.connections
+14-07-2026 12:31 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:31 - Securing GET /actuator/metrics/
+14-07-2026 12:31 - Secured GET /actuator/metrics/
+14-07-2026 12:31 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:31 - Securing GET /error
+14-07-2026 12:31 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:31 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:31 - Securing GET /actuator/metrics
+14-07-2026 12:31 - Secured GET /actuator/metrics
+14-07-2026 12:31 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:32 - Securing GET /actuator/metrics/jvm.gc.memory.allocated
+14-07-2026 12:32 - Secured GET /actuator/metrics/jvm.gc.memory.allocated
+14-07-2026 12:32 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:32 - Securing GET /actuator/metrics
+14-07-2026 12:32 - Secured GET /actuator/metrics
+14-07-2026 12:32 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:32 - Securing GET /actuator/metrics/jvm.gc.memory.allocated
+14-07-2026 12:32 - Secured GET /actuator/metrics/jvm.gc.memory.allocated
+14-07-2026 12:32 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:32 - Securing GET /actuator/metrics
+14-07-2026 12:32 - Secured GET /actuator/metrics
+14-07-2026 12:32 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:33 - Securing GET /actuator/metrics/http.server.requests
+14-07-2026 12:33 - Secured GET /actuator/metrics/http.server.requests
+14-07-2026 12:33 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:33 - Securing GET /actuator/metrics
+14-07-2026 12:33 - Secured GET /actuator/metrics
+14-07-2026 12:33 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:34 - Securing GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Secured GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:34 - Securing GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Secured GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:34 - Securing GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Secured GET /actuator/metrics/process.start.time
+14-07-2026 12:34 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:35 - Securing GET /actuator/metrics
+14-07-2026 12:35 - Secured GET /actuator/metrics
+14-07-2026 12:35 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:37 - Securing GET /actuator/loggers
+14-07-2026 12:37 - Secured GET /actuator/loggers
+14-07-2026 12:37 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:40 - Securing GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Secured GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:40 - Securing GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Secured GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:40 - Securing GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Secured GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:40 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:40 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:40 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:40 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:40 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:40 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:40 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:41 - Securing GET /actuator/loggers
+14-07-2026 12:41 - Secured GET /actuator/loggers
+14-07-2026 12:41 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:41 - Securing GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:41 - Secured GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:41 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:41 - Securing GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:41 - Secured GET /actuator/loggers/com.ecom.backend
+14-07-2026 12:41 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:41 - Securing GET /actuator/loggers
+14-07-2026 12:41 - Secured GET /actuator/loggers
+14-07-2026 12:41 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Secured GET /actuator/loggers/com.ecom
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /actuator/loggers
+14-07-2026 12:42 - Secured GET /actuator/loggers
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing POST /actuator/loggers/com.ecom.backend
+14-07-2026 12:42 - Secured POST /actuator/loggers/com.ecom.backend
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing POST /actuator/loggers
+14-07-2026 12:42 - Secured POST /actuator/loggers
+14-07-2026 12:42 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Securing GET /error
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:42 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:42 - Securing GET /actuator/loggers
+14-07-2026 12:42 - Secured GET /actuator/loggers
+14-07-2026 12:42 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:43 - Securing POST /actuator/loggers/com.ecom.backend
+14-07-2026 12:43 - Secured POST /actuator/loggers/com.ecom.backend
+14-07-2026 12:43 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:43 - Securing GET /actuator/loggers
+14-07-2026 12:43 - Secured GET /actuator/loggers
+14-07-2026 12:43 - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unrecognized token 'evel': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')]
+14-07-2026 12:43 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:43 - Securing GET /error
+14-07-2026 12:43 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 12:43 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 12:43 - Securing GET /actuator/loggers
+14-07-2026 12:43 - Secured GET /actuator/loggers
+14-07-2026 12:43 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:12 - Securing GET /actuator/shutdown
+14-07-2026 14:12 - Secured GET /actuator/shutdown
+14-07-2026 14:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:12 - Securing GET /error
+14-07-2026 14:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:12 - Securing GET /actuator/shutdown
+14-07-2026 14:12 - Secured GET /actuator/shutdown
+14-07-2026 14:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:12 - Securing GET /error
+14-07-2026 14:12 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:12 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:14 - Starting BackendApplication using Java 25.0.1 with PID 19544 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 14:14 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 14:14 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 14:14 - Filter 'jwtFilter' configured for use
+14-07-2026 14:14 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 14:14 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 14:14 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 14:14 - Started BackendApplication in 6.903 seconds (process running for 7.706)
+14-07-2026 14:14 - Securing GET /actuator/shutdown
+14-07-2026 14:14 - Secured GET /actuator/shutdown
+14-07-2026 14:14 - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+14-07-2026 14:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:14 - Securing GET /error
+14-07-2026 14:14 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:14 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Starting BackendApplication using Java 25.0.1 with PID 27876 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 14:15 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 14:15 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 14:15 - Filter 'jwtFilter' configured for use
+14-07-2026 14:15 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 14:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 14:15 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 14:15 - Started BackendApplication in 7.389 seconds (process running for 8.155)
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:15 - Securing POST /actuator/shutdown
+14-07-2026 14:15 - Secured POST /actuator/shutdown
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Securing GET /error
+14-07-2026 14:15 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:15 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Starting BackendApplication using Java 25.0.1 with PID 35700 (C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend\target\classes started by Admin in C:\Users\Admin\Desktop\CAREER\PROJECTS\FAISAL_SPRING\Ecommerce Udemy\backend)
+14-07-2026 14:19 - Running with Spring Boot v4.0.6, Spring v7.0.7
+14-07-2026 14:19 - No active profile set, falling back to 1 default profile: "default"
+14-07-2026 14:19 - Filter 'jwtFilter' configured for use
+14-07-2026 14:19 - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+14-07-2026 14:19 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14-07-2026 14:19 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, JwtFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+14-07-2026 14:19 - Started BackendApplication in 7.219 seconds (process running for 7.836)
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator/
+14-07-2026 14:19 - Secured GET /actuator/
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator
+14-07-2026 14:19 - Secured GET /actuator
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing POST /actuator/shutdown
+14-07-2026 14:19 - Secured POST /actuator/shutdown
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Securing GET /error
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
+14-07-2026 14:19 - Pre-authenticated entry point called. Rejecting access
+14-07-2026 14:19 - Securing GET /actuator
+14-07-2026 14:19 - Secured GET /actuator
+14-07-2026 14:19 - Set SecurityContextHolder to anonymous SecurityContext
